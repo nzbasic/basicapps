@@ -1,0 +1,139 @@
+body {
+    text-align: center;
+    width: 1326px;
+    height: auto;
+    margin: 10px auto;
+    user-select: none;
+
+}
+
+p {
+    color: black;
+    font-family: 'Signika', sans-serif;
+    font-size: 20px;
+}
+
+.col {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-color: #eee;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    vertical-align: top;
+    color: black;
+    font-family: 'Signika', sans-serif;
+    font-size: 40px;
+    line-height: 45px;
+    user-select: none;
+}
+
+div.row > div:last-child { 
+    border-right: none;  
+}
+
+.row:last-child .col {
+    border-bottom: none;
+}
+
+.row {
+    font-size: 0px;
+}
+
+#game {
+    border: 1px solid black;
+    display: inline-block;
+    width: 1195px;
+    height: auto;
+}
+
+.col.hidden:hover {
+    background-color: white;
+}
+
+.col.mine {
+    background-color: red;
+    font-size: 0px;
+}
+
+.col.hidden {
+    background-color: lightskyblue;
+    cursor: pointer;
+    font-size: 0px;
+}
+
+.col[data-num="1"] {
+    color: blue;
+}
+.col[data-num="2"] {
+    color: green;
+}
+.col[data-num="3"] {
+    color: red;
+}
+.col[data-num="4"] {
+    color: purple;
+}
+.col[data-num="5"] {
+    color: maroon;
+}
+.col[data-num="6"] {
+    color: cyan;
+}
+.col[data-num="7"] {
+    color: black;
+}
+.col[data-num="8"] {
+    color: gray;
+}
+.col[data-num="0"] {
+    font-size: 0px;
+}
+
+.col.flag {
+    background-color: lightgreen;
+}
+
+a:visited {
+    color: black;
+}
+
+#reset {
+    height: 50px;
+    width: 200px;
+    display: inline-block;
+    color: black;
+    font-family: 'Signika', sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    text-align:center;
+    border: 1px solid black;
+    user-select: none;
+}
+
+#reset:hover {
+    background-color: lightskyblue;
+}
+
+#back {
+    height: 50px;
+    width: 200px;
+    display: inline-block;
+    color: black;
+    font-family: 'Signika', sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    text-align:center;
+    border: 1px solid black;
+    user-select: none;
+}
+
+#back:hover {
+    background-color: lightskyblue;
+}
+
+a {
+    display:block;
+    text-decoration:none;
+}
+

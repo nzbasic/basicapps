@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pathfinder</title>
+        <link rel="stylesheet" href="path.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="game" oncontextmenu="return false;"></div>
+        <script src="path.js" ></script>
+        <b></b>
+        <p>Click once to place the start point, click again to place the end point, then click/drag to place down walls.</p>
+        <p>You can also click and drag on the start/end points to move them.</p>
+        <p>The numbers that are displayed are the minimum steps required to reach that node, found using Dijkstra's algorithm.</p>
+        
+        <div id="reset" oncontextmenu="return false;" onclick="resetButton();">Reset</div>
+        <div id="back" oncontextmenu="return false;"><a href="index.html">Go back home</a></div>
+    </body>
+</html>
