@@ -1,5 +1,8 @@
+// Creating a const for the div
 const $game = $('#game');
 var other = 1;
+
+// Setting up the board by appending divs to the main div, also adding the row and col numbers as attributes
 function gameBoard(rows, cols) {
     $game.empty()
     for (var i = 0; i < rows; i++) {
@@ -9,6 +12,8 @@ function gameBoard(rows, cols) {
                 .addClass('col')
                 .attr('row', i)
                 .attr('col', j);
+            
+            // Making every other square have the class ODD so I can make them black with CSS
             if (other % 2 == 0) {
                 $col.addClass('ODD');
             }
@@ -22,7 +27,7 @@ function gameBoard(rows, cols) {
 
 gameBoard(8,8);
 
-// placing the pieces 
+// Placing the pieces 
 
 for (var i = 0; i < 8; i++) {
     for (var j = 0; j < 8; j++) {
@@ -83,6 +88,7 @@ for (var i = 0; i < 8; i++) {
         }
     }
 }
+
 
 $game.on('click', '.col', function(){
     var $cell = $(this);
