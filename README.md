@@ -7,6 +7,7 @@ So far:
 
 Minesweeper,
 Pathfinder,
-Reaction Game.
+Reaction Game,
+osu Stats Tracker for my profile.
 
 All of the apps use jQuery.
