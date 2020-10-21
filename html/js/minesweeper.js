@@ -96,8 +96,17 @@ $game.on('mousedown', '.col.hidden', function() {
     // Middle mouse click shortcut for reseting board.
     if (event.which == 2) {
         reset();
+        return false;
     }
 })
+
+$(document).on('mousedown', function(){
+    // Middle mouse click shortcut for reseting board.
+    if (event.which == 2) {
+        reset();
+        return false;
+    }
+});
 
 var finalI;
 var finalJ;

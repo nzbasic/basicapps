@@ -1,48 +1,64 @@
-body {
-    text-align: center;
-}
 
 #game {
-    width: 100%;
+    text-align:center;
+    margin: 0 auto;
+    width: 1230px;
     height: auto;
-    margin: 10px auto;
-    text-align: center;
-}
-
-p {
-    color: black;
-    font-family: 'Signika', sans-serif;
-    font-size: 20px;
 }
 
 .col {
     display: inline-grid;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 40px;
+    height: 40px;
+    background-color: hsl(0, 0%, 71%);
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
     vertical-align: top;
+    font-family: 'Signika', sans-serif;
     user-select: none;
     color: black;
-    font-size: 30px;
-    line-height: 50px;
-}
-
-div.row > div:first-child { 
-    border-left: 1px solid black;  
-}
-
-.row:first-child .col {
-    border-top: 1px solid black;
-}
-
-.ODD {
-    background-color:gray;
+    font-size: 20px;
+    line-height: 40px;
 }
 
 .col:hover {
     background-color: #eee;
+}
+
+.col.searched {
+    background-color: hsl(204, 86%, 53%);
+}
+
+.col.path {
+    background-color: hsl(48, 100%, 67%);
+}
+
+.col.start {
+    background-color: hsl(171, 100%, 41%);
+}
+
+.col.end {
+    background-color: hsl(348, 100%, 61%);
+}
+
+.col.start:hover {
+    background-color: lightgreen;
+}
+
+.col.end:hover {
+    background-color: pink;
+}
+
+.col.searched:hover {
+    background-color: #eee;
+}
+
+.col.wall {
+    background-color: black;
+}
+
+.col.wall:hover {
+    background-color: grey;
 }
 
 #reset {
@@ -83,3 +99,4 @@ a {
     display:block;
     text-decoration:none;
 }
+

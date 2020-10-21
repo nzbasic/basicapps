@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>js Apps</title>
+        <link rel="stylesheet" href="reaction.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+    </head>
+
+    <body>
+      <section class="hero is-primary is-fullwidth">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Welcome to basicapps.net</h1>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div class="tabs is-boxed is-centered is-fullwidth">
+            <div class="container">
+              <ul>
+                <li>
+                  <a href="../index.html"><span><strong>About</strong></span></a>
+                </li>
+                <li>
+                  <a href="../documentation.html"><span><strong>Documentation</strong></span></a>
+                </li>
+                <li>
+                  <a href="../osu/Todd.html"><span><strong>osu! Analysis</strong></span></a>
+                </li>
+                <li class="is-hidden-touch">
+                  <a href="../js/Apps.html"><span><strong>js Apps</strong></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tabs is-boxed is-centered is-fullwidth">
+            <div class="container">
+              <ul>
+                <li>
+                  <a href="Apps.html"><span><strong>Pathfinder</strong></span></a>
+                </li>
+                <li>
+                  <a href="Minesweeper.html"><span><strong>Minesweeper</strong></span></a>
+                </li>
+                <li class="is-active">
+                  <a href="Reaction.html"><span><strong>Reaction</strong></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <style>
+          .textholder {
+            text-align: center;
+          }
+        
+        </style>
+        <div class="container textholder">
+            <p>Click the circles as they appear, the number that appears inside the circle is the time taken for the previous circle to be clicked.</p>
+            <div id="game" oncontextmenu="return false;"></div>
+            <script src="reaction.js"></script>
+            <br></br>
+            <div id="reset" oncontextmenu="return false;" onclick="reset();">Reset</div>
+            </div>
+      </section>
+    </body>
+</html>

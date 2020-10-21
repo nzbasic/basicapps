@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>osu! Analysis</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="Top.js"></script>
+        <script src="jquery.canvasjs.min.js"></script>
+        <script type="text/javascript" src="jqxcore.js"></script>
+        <script type="text/javascript" src="jqxbuttons.js"></script>
+        <script type="text/javascript" src="jqxscrollbar.js"></script>
+        <script type="text/javascript" src="jqxgrid.js"></script>
+        <script type="text/javascript" src="jqxgrid.selection.js"></script>
+        <script type="text/javascript" src="jqxdata.js"></script>
+        <link rel="stylesheet" href="jqx.base.css" type="text/css" />
+
+    </head>
+
+    <body>
+      <section class="hero is-primary is-fullwidth">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Welcome to basicapps.net</h1>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div class="tabs is-boxed is-centered is-fullwidth">
+            <div class="container">
+              <ul>
+                <li>
+                  <a href="../index.html"><span><strong>About</strong></span></a>
+                </li>
+                <li>
+                  <a href="../documentation.html"><span><strong>Documentation</strong></span></a>
+                </li>
+                <li>
+                  <a href="Todd.html"><span><strong>osu! Analysis</strong></span></a>
+                </li>
+                <li class="is-hidden-touch">
+                  <a href="../js/Apps.html"><span><strong>js Apps</strong></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tabs is-boxed is-centered is-fullwidth">
+            <div class="container">
+              <ul>
+                <li>
+                  <a href="Todd.html"><span><strong>Todd Howard</strong></span></a>
+                </li>
+                <li>
+                  <a href="Tayden.html"><span><strong>bluetayden</strong></span></a>
+                </li>
+                <li>
+                  <a href="Pen.html"><span><strong>PENLICKER</strong></span></a>
+                </li>
+                <li>
+                  <a href="BigZ.html"><span><strong>Big Z</strong></span></a>
+                </li>
+                <li>
+                    <a href="Zoomer.html"><span><strong>Zoomer</strong></span></a>
+                </li>
+                <li>
+                  <a href="Ningalu.html"><span><strong>ningalu</strong></span></a>
+                </li>
+                <li>
+                  <a href="Peter Griffin.html"><span><strong>Peter Griffin</strong></span></a>
+                </li>
+                <li class="is-active">
+                    <a href="Top.html"><span><strong>NZ Total</strong></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <style>
+            .block {
+                margin: 0 auto;
+                margin-right: 20px;
+                display: inline-block;
+                
+            } 
+            .block-container {
+                padding-top:5px;
+                display: inline-block;
+                margin: 0 auto;
+                margin-left: 20px;
+            }
+            .outer {
+                text-align:center;
+            }
+            
+        </style>
+        <div class="container outer">
+            <p>On the left is a list of the top 100 plays in New Zealand, and on the right a visualization on NZ's total pp based on the weighting system and each contributer.</p>
+            <div class="block-container">
+                <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
+                    <div id="jqxgrid" class="block"></div>
+                </div>
+                <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
+                    <div id="grid2" class="block"></div>
+                </div>
+            </div>
+            <p>I forgot to add date tracking when adding total pp data to the dataset, I will go and fix it later by finding the date of all the newest plays.</p>
+        </div>
+        
+        <div class="container">
+            <style>
+                .graph {
+                  padding-top: 10px;
+                  height:300px;
+                  width: 100%;
+                }
+              </style>
+            <div id="ppContainer" class="graph"></div>
+        </div>
+      </section>
+    </body>
+</html>

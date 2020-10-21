@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id='Description'>Top NZ osu! Scores</title>
+    <link rel="stylesheet" href="jqx.base.css" type="text/css" />
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jqxcore.js"></script>
+    <script type="text/javascript" src="jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqxgrid.js"></script>
+    <script type="text/javascript" src="jqxgrid.selection.js"></script>
+    <script type="text/javascript" src="jqxdata.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // prepare the data
+            var name = [];
+            var rank = [];
+            var title = [];
+            var diffname = [];
+            var mods = [];
+            var pp = [];
+            var misscount = [];
+            var data2 = new Array();
+            $.getJSON("http://basicapps.net/top.json", function(data) {
+                //console.log(data);
+                //var rankGlobalTable = JSON.parse(data); //now it an object
+                var scoresTable = data.table[0]['score'];
+
+                for (let i = 0; i < 100; i++) {
+                    var row = {};
+                    row["rank"] = scoresTable[i][0];
+                    row["title"] = scoresTable[i][1]
+                    row["mods"] = scoresTable[i][3];
+                    row["pp"] = parseFloat(scoresTable[i][4]);
+                    row["name"] = scoresTable[i][6];
+                    row["misscount"] = parseFloat(scoresTable[i][5]);
+                    row["diffname"] = scoresTable[i][2];
+                    row["acc"] = Math.round((100 * parseFloat(scoresTable[i][8]) + Number.EPSILON) * 100) / 100;
+                    data2[i] = row;
+                }
+                //console.log(data2);
+                var source =
+                {
+                    localdata: data2,
+                    datatype: "array"
+                };
+                var dataAdapter = new $.jqx.dataAdapter(source, {
+                    downloadComplete: function (data, status, xhr) { },
+                    loadComplete: function (data) { },
+                    loadError: function (xhr, status, error) { }
+                });
+                $("#jqxgrid").jqxGrid(
+                {
+                    width: 736,
+                    source: dataAdapter,
+                    columns: [
+                    { text: "Name", datafield: 'name', width: 100},
+                    { text: 'Rank', datafield: 'rank', width: 40 },
+                    { text: 'Title', datafield: 'title', width: 180 },
+                    { text: 'Difficulty', datafield: 'diffname', width: 140 },
+                    { text: 'Mods', datafield: 'mods', width: 60 },
+                    { text: 'Misses', datafield: 'misscount', width: 60},
+                    { text: 'pp', datafield: 'pp', width: 80, },
+                    { text: 'Acc', datafield: 'acc', width: 60 }
+                    ]
+                });
+            });
+
+            var data3 = new Array();
+            $.getJSON("http://basicapps.net/data.json", function(data) {
+                //console.log(data);
+                //var rankGlobalTable = JSON.parse(data); //now it an object
+                var contributerTable = data.table[data.table.length-1];
+
+                var row = {};
+                row["name"] = "NZ Total";
+                row["pp"] = Math.round((parseFloat(contributerTable[contributerTable.length-1]) + Number.EPSILON) * 100) / 100;
+                data3[0] = row;
+
+                for (let i = 0; i < contributerTable.length-1; i++) {
+                    var row = {};
+                    row["name"] = contributerTable[i][0];
+                    row["pp"] = Math.round((parseFloat(contributerTable[i][1]) + Number.EPSILON) * 100) / 100;
+                    data3[i+1] = row;
+                }
+
+                //console.log(data3);
+                var source =
+                {
+                    localdata: data3,
+                    datatype: "array"
+                };
+                var dataAdapter = new $.jqx.dataAdapter(source, {
+                    downloadComplete: function (data, status, xhr) { },
+                    loadComplete: function (data) { },
+                    loadError: function (xhr, status, error) { }
+                });
+                $("#grid2").jqxGrid(
+                {
+                    width: 196,
+                    source: dataAdapter,
+                    columns: [
+                    { text: "Name", datafield: 'name', width: 100},
+                    { text: 'pp', datafield: 'pp', width: 80 },
+                    ]
+                });
+            });
+
+
+
+        });
+    </script>
+</head>
+<style>
+    .block {
+        margin: 0 auto;
+        margin-right: 20px;
+        display: inline-block;
+        
+    } 
+    #jqxWidget {
+        padding: 0 5px;
+        text-align: center;
+        margin:0 auto;
+    }
+</style>
+<body class='default'>
+    <div id='jqxWidget' style="font-size: 13px; font-family: Verdana; float: left;">
+        <div id="jqxgrid" class="block"></div>
+        <div id="grid2" class="block"></div>
+    </div>
+</body>
+</html>

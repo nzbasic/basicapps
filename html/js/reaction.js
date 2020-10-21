@@ -31,15 +31,15 @@ randX = Math.floor(Math.random() * 9);
 randY = Math.floor(Math.random() * 14);
 var $randCell = document.querySelectorAll(`[data-row='${randX}'][data-col='${randY}']`);
 $($randCell).addClass('circle')
+var first = 1;
+var timeLast;
+var timePrev;
+var timeTotal = 0;
+var numClick = 0;
 
 // Event listener for clicking a circle
 $game.on('click', '.col.circle', function() {
-    var timePrev;
-    var timeLast;
-    var timeTotal = 0;
-    var numClick = 0;
-    var first = 1;
-
+    
     var $cell = $(this);
     $cell.removeClass('circle');
     
