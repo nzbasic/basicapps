@@ -1,6 +1,8 @@
 # basicapps
 My Website
 
+This website is no longer online. The osu tracking capabilities can be found on [osutracker.com](osutracker.com)
+
 The main feature is my osu stats hosting, I obtain data from the osu api in my server, (see other repo) and use canvas-js to render the data as a line graph. 
 
 Example:\
